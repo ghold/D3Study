@@ -1,0 +1,10 @@
+{
+    "static": {
+        "css": "text/css",
+        "js": "application/javascript",
+        "woff": "application/x-font-woff",
+        "tff": "application/x-font-tff",
+        "svg": "image/svg+xml",
+        "txt": "application/octet-stream"
+    }
+}
