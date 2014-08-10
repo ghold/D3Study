@@ -1,9 +1,21 @@
-#test rect {
+rect{
   fill: steelblue;
 }
 
-#test text {
-  fill: white;
-  font: 10px sans-serif;
-  text-anchor: end;
+rect:hover {
+  fill: brown;
+}
+
+.axis text {
+	font: 10px sans-serif;
+}
+
+.axis path, .axis line {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+}
+
+.x axis path {
+	display: none;
 }
