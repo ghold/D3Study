@@ -7,7 +7,7 @@ function test (response) {
 	// body...
 	console.log("Request handler 'test' was called.");
 
-	var index = fs.readFileSync('./template/index.html', 'utf-8');
+	var index = fs.readFileSync('./lessons/1/template/index.html', 'utf-8');
 
 	jsdom.env({
 		features : { QuerySelector : true }
