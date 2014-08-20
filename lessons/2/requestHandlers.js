@@ -16,10 +16,22 @@ function test (response) {
 			var el = window.document.querySelector('#test')
 				 , body = window.document.querySelector('body')
 
-			var circle = d3.select(el).selectAll("circle");
-			circle.style("fill", "steelblue");
-			circle.attr("r", 30);
-			circle.attr("cx", function() { return Math.random() * 720; });
+			//correct
+			var svg = d3.select(el);
+			var circle = svg.selectAll("circle").data([32, 57, 112, 239]);
+			var circleEnter = circle.enter().append("circle");
+
+			circle.attr("cy", 60);
+			circle.attr("cx", function(d, i) { return i * 100 + 30; });
+			circle.attr("r", function(d) { return Math.sqrt(d); });
+
+			//bug
+			// svg.selectAll("circle")
+			//     .data([32, 57, 112, 293])
+			//   .enter().append("circle")
+			//     .attr("cy", 60)
+			//     .attr("cx", function(d, i) { return i * 100 + 30; })
+			//     .attr("r", function(d) { return Math.sqrt(d); });
 
 			var svgsrc = window.document.innerHTML
 
