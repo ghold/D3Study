@@ -1,9 +1,9 @@
 ﻿var fs = require("fs")
 
-function route(handle, pathname, response, request) { 
+function route(handle, pathname, response, request, io) { 
 	console.log("About to route a request for " + pathname); 
 	if (typeof handle[pathname] === 'function') { 
-		handle[pathname](response, request); 
+		handle[pathname](response, request, io); 
 	} else if(/.*\.(.{0,4})$/.test(pathname)){
 		suffix = RegExp.$1;
 		console.log("Get" + pathname);
